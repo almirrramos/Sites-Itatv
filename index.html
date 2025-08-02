@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transmissão</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4318970819037783"
+     crossorigin="anonymous"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://acdn-us.mitiendanube.com/stores/963/751/products/futebol_02_150x200h1-5b3b99d4bef3fda34c15558886943756-1024-1024.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .descricao {
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    #player {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    #video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: none;
+    }
+
+    #video-poster {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    #play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.7);
+      border: none;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      color: #fff;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 3;
+      transition: background 0.3s;
+    }
+
+    #play-button:hover {
+      background: rgba(255, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Descrição acima do player -->
+  <div class="descricao">Sport Recife x Bahia<br>02/08/2025 16:00<br>Campeonato Brasileiro</div>
+
+  <!-- Player de vídeo -->
+  <div id="player">
+    <img id="video-poster" src="https://ds-images.bolavip.com/news/image?src=https://images.antenadosnofutebol.com.br/webp/1200_740/ANF_20250801_ANF_297396_ANF-FICHA-TECNICA-4-1200x740.webp&width=1200&height=740" alt="Capa do vídeo">
+    <button id="play-button">&#9658;</button>
+    <video id="video" controls muted playsinline></video>
+  </div>
+
+  <!-- hls.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script>
+    const video = document.getElementById('video');
+    const poster = document.getElementById('video-poster');
+    const playBtn = document.getElementById('play-button');
+
+    video.muted = true;
+    video.setAttribute('playsinline', 'true');
+    const videoSrc = 'https://cloud7-l2-user98745241-2.s27-usa-cloudfront-net.online/secret_key/2008f31cc923d2f48f8a0ae9fda53609.m3u8';
+
+    function startVideo() {
+      poster.style.display = 'none';
+      playBtn.style.display = 'none';
+      if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+        video.play();
+      } else {
+        alert("Seu navegador não suporta reprodução de vídeo HLS.");
+      }
+    }
+
+    playBtn.addEventListener('click', startVideo);
+    poster.addEventListener('click', startVideo);
+  </script>
+</body>
+</html>
