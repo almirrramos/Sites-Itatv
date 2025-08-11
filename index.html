@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transmissão</title>
+  <title>ItaTv Ao Vivo</title>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4318970819037783"
      crossorigin="anonymous"></script>
   <style>
@@ -14,23 +14,53 @@
     body {
       margin: 0;
       padding: 0;
-      background: url('https://acdn-us.mitiendanube.com/stores/963/751/products/futebol_02_150x200h1-5b3b99d4bef3fda34c15558886943756-1024-1024.jpg') no-repeat center center fixed;
+      background: url('https://telaviva.com.br/wp-content/uploads/2022/05/streaming.jpg') no-repeat center center fixed;
       background-size: cover;
       font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      padding-top: 70px;
     }
 
-    .descricao {
-      color: #fff;
+    /* Cabeçalho */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .logo {
       font-size: 22px;
       font-weight: bold;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-      margin-bottom: 15px;
-      text-align: center;
+      color: #ffffff;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #ff0000;
     }
 
     #player {
@@ -40,6 +70,7 @@
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
       border-radius: 10px;
       overflow: hidden;
+      margin-top: auto;
       background: #000;
     }
 
@@ -50,6 +81,7 @@
       border: none;
     }
 
+    /* Imagem de fundo */
     #video-poster {
       position: absolute;
       top: 0;
@@ -61,6 +93,7 @@
       cursor: pointer;
     }
 
+    /* Botão Play */
     #play-button {
       position: absolute;
       top: 50%;
@@ -81,19 +114,64 @@
     #play-button:hover {
       background: rgba(255, 0, 0, 0.8);
     }
+
+    #cta-button {
+      margin: 20px 0;
+      padding: 15px 30px;
+      background-color: #ff0000;
+      color: #fff;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    #cta-button:hover {
+      background-color: #000000;
+    }
+
+    footer {
+      width: 100%;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 15px 10px;
+      font-size: 14px;
+      margin-top: auto;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Descrição acima do player -->
-  <div class="descricao">Juventude x Corinthians<br>11/08/2025 20:00<br>Campeonato Brasileiro</div>
+  <!-- Cabeçalho -->
+  <header>
+    <nav>
+      <div class="logo">ItaTV</div>
+      <div class="menu">
+        <a href="https://api.whatsapp.com/send/?phone=5587996219612&text=Ol%C3%A1%21%20Gostaria%20de%20acessar%20todos%20os%20canais%20dispon%C3%ADveis%20na%20ItaTV.">Canais</a>
+        <a href="https://api.whatsapp.com/send/?phone=5587996219612&text=Ol%C3%A1%21%20Gostaria%20de%20acessar%20todos%20os%20filmes%20dispon%C3%ADveis%20na%20ItaTV.">Filmes</a>
+        <a href="https://api.whatsapp.com/send/?phone=5587996219612&text=Ol%C3%A1%21%20Gostaria%20de%20acessar%20todas%20as%20s%C3%A9ries%20dispon%C3%ADveis%20na%20ItaTV.">Séries</a>
+        <a href="https://api.whatsapp.com/send/?phone=5587996219612&text=Ol%C3%A1%21%20Gostaria%20de%20acessar%20todos%20os%20conte%C3%BAdos%20dispon%C3%ADveis%20na%20ItaTV%2C%20incluindo%20filmes%2C%20s%C3%A9ries%2C%20esportes%20e%20canais%20ao%20vivo.%20Poderia%20me%20ajudar%3F" target="_blank">Contato</a>
+      </div>
+    </nav>
+  </header>
 
   <!-- Player de vídeo -->
   <div id="player">
-    <img id="video-poster" src="https://www.365scores.com/pt-br/news/magazine/wp-content/uploads/2025/08/Design-sem-nome-32.png" alt="Capa do vídeo">
+    <img id="video-poster" src="https://s2-extra.glbimg.com/WKu0N8v01qcmHtQeC4EVxYQ2CIw=/0x0:1100x745/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f551ea7087a47f39ead75f64041559a/internal_photos/bs/2025/f/J/BwwD6gQYOTBI86sqAriQ/confronto-corinthians-sp-vs-palmeiras-sp-.png" alt="Capa do vídeo">
     <button id="play-button">&#9658;</button>
     <video id="video" controls muted playsinline></video>
   </div>
+  
+  <!-- Botão CTA -->
+  <a id="cta-button" href="https://api.whatsapp.com/send/?phone=5587996219612&text=Ol%C3%A1%21%20Gostaria%20de%20acessar%20todos%20os%20conte%C3%BAdos%20dispon%C3%ADveis%20na%20ItaTV%2C%20incluindo%20filmes%2C%20s%C3%A9ries%2C%20esportes%20e%20canais%20ao%20vivo.%20Poderia%20me%20ajudar%3F" target="_blank">Assistir Programação Completa.</a>
+
+  <!-- Rodapé -->
+  <footer>
+    © 2025 ItaTv - Todos os direitos reservados.
+  </footer>
 
   <!-- hls.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
@@ -104,7 +182,7 @@
 
     video.muted = true;
     video.setAttribute('playsinline', 'true');
-    const videoSrc = 'https://98ca2.crackstreamslivehd.com/premiere1/tracks-v1a1/mono.m3u8?ip=177.72.196.112&token=69fbebaacde71b32649a146ff9147f89250523dc-5e-1754999988-1754945988';
+    const videoSrc = 'https://04-mcteteu.shop/secret_key/5961bc8c7556cd8770b9657fdf9e277a.m3u8';
 
     function startVideo() {
       poster.style.display = 'none';
@@ -127,7 +205,6 @@
   </script>
 </body>
 </html>
-
 
 
 
