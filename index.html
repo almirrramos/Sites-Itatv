@@ -21,7 +21,7 @@
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      padding-top: 70px;
+      padding-top: 120px; /* mais espaço no topo */
     }
 
     /* Cabeçalho */
@@ -63,6 +63,21 @@
       color: #ff0000;
     }
 
+    /* Texto acima do player */
+    #info-text {
+      text-align: center;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.4em;
+      margin: 40px auto 10px auto; /* margem topo maior, centralizado horizontal */
+      padding: 0;
+      border-radius: 0;
+      width: 90%;
+      max-width: 800px;
+    }
+
+    /* Player */
     #player {
       position: relative;
       width: 90%;
@@ -70,7 +85,7 @@
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
       border-radius: 10px;
       overflow: hidden;
-      margin-top: auto;
+      margin: 0 auto 0 auto; /* centralizado horizontal */
       background: #000;
     }
 
@@ -126,6 +141,10 @@
       cursor: pointer;
       text-decoration: none;
       transition: background-color 0.3s ease;
+      max-width: 800px;
+      width: 90%;
+      display: block;
+      text-align: center;
     }
 
     #cta-button:hover {
@@ -158,9 +177,16 @@
     </nav>
   </header>
 
+  <!-- Texto acima do player -->
+  <div id="info-text">
+    <div>Atletico Nacional x São Paulo</div>
+    <div>12/08/2025 21:30</div>
+    <div>Copa Libertadores</div>
+  </div>
+
   <!-- Player de vídeo -->
   <div id="player">
-    <img id="video-poster" src="https://s2-techtudo.glbimg.com/krOcIv8qbwchanh23TDI57_PO1I=/0x0:1024x682/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2024/f/H/sPAaruSBWkNsHB0OsAWw/4944232-c9d99179545d36a.jpg" alt="Capa do vídeo">
+    <img id="video-poster" src="https://odia.ig.com.br/apostas/wp-content/uploads/2025/08/Atletico-Nacional-x-Sao-Paulo_ODia-768x384.png" alt="Capa do vídeo">
     <button id="play-button">&#9658;</button>
     <video id="video" controls muted playsinline></video>
   </div>
@@ -182,7 +208,7 @@
 
     video.muted = true;
     video.setAttribute('playsinline', 'true');
-    const videoSrc = 'https://57b1.crackstreamslivehd.com/premiere1/tracks-v1a1/mono.m3u8?ip=177.72.196.112&token=1c3c42bda517cff53fe67e9249bd6953407c4502-27-1755001996-1754947996';
+    const videoSrc = '';
 
     function startVideo() {
       poster.style.display = 'none';
@@ -205,13 +231,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
